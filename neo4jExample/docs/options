@@ -1,0 +1,39 @@
+-classpath
+'/var/lib/hudson/svn_temp/examples/apoc-examples/tags/1.1/target/classes:/var/lib/hudson/.m2/repository/org/apache/lucene/lucene-core/2.9.2/lucene-core-2.9.2.jar:/var/lib/hudson/.m2/repository/org/neo4j/neo4j-graph-algo/0.6/neo4j-graph-algo-0.6.jar:/var/lib/hudson/.m2/repository/org/neo4j/neo4j-shell/1.1/neo4j-shell-1.1.jar:/var/lib/hudson/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar:/var/lib/hudson/.m2/repository/org/neo4j/neo4j-kernel/1.1/neo4j-kernel-1.1.jar:/var/lib/hudson/.m2/repository/com/google/protobuf/protobuf-java/2.3.0/protobuf-java-2.3.0.jar:/var/lib/hudson/.m2/repository/org/neo4j/neo4j-remote-graphdb/0.7/neo4j-remote-graphdb-0.7.jar:/var/lib/hudson/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/var/lib/hudson/.m2/repository/org/neo4j/neo4j-index/1.1/neo4j-index-1.1.jar:/var/lib/hudson/.m2/repository/org/neo4j/neo4j-online-backup/0.6/neo4j-online-backup-0.6.jar'
+-encoding
+'UTF-8'
+-protected
+-quiet
+-sourcepath
+'/var/lib/hudson/svn_temp/examples/apoc-examples/tags/1.1/target/sources'
+-author
+-bottom
+'Copyright &#169; 2010 <a href="http://neo4j.org/">Neo4j</a>. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/var/lib/hudson/svn_temp/examples/apoc-examples/tags/1.1/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Neo4j Apoc 1.1 API'
+-group
+'Graph database' 'org.neo4j.kernel:org.neo4j.graphdb:org.neo4j.kernel.*:org.neo4j.graphdb.*'
+-group
+'Index' 'org.neo4j.index:org.neo4j.index.*'
+-group
+'Graph algorithms' 'org.neo4j.graphalgo:org.neo4j.graphalgo.*'
+-group
+'Online backup' 'org.neo4j.onlinebackup:org.neo4j.onlinebackup.*'
+-group
+'Remote' 'org.neo4j.remote:org.neo4j.remote.*'
+-group
+'Helpers' 'org.neo4j.helpers:org.neo4j.helpers.*'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-link
+'http://junit.org/apidocs'
+-use
+-version
+-windowtitle
+'Neo4j Apoc 1.1 API'
