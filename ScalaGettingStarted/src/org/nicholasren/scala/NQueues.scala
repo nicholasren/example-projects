@@ -1,9 +1,9 @@
-package org.nicholasren.scala
+//package org.nicholasren.scala
 
 object NQueues {
 	
 	def main(args: Array[String]) {
-       val result = queens(8);
+       val result = queens(4);
        result map(println);
        println(result.length);
     }
@@ -14,12 +14,12 @@ object NQueues {
       else for {
         queens <- placeQueens(k - 1)
         column <- List.range(1, n + 1)
-        if isSafe(column, queens, 1)
+        if isSafe(column, queens)
       } yield column :: queens
     placeQueens(n)
   }
 
-  def isSafe(col: Int, queens: List[Int], delta: Int): Boolean =
+  def isSafe(col: Int, queens: List[Int]): Boolean =
     {
        var idx = 0;
        while(idx < queens.size)
@@ -30,7 +30,6 @@ object NQueues {
     	     }
     	   idx += 1;
        }
-       
        return true;
     }
 
