@@ -9,7 +9,7 @@ start = (host, port) ->
     }, rsp)
 
   server = http.createServer(delegate)
-  server.listen 0 
+  server.listen 0
   console.log 'Server running at http://0.0.0.0:' + server.address().port
 
 fetchTarget = (option, response) ->
