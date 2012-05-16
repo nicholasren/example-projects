@@ -1,5 +1,3 @@
-package org.nicholasren.scala.sort
-
 object MerageSort {
 
   def main(args: Array[String]) {
