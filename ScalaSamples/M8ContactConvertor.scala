@@ -1,14 +1,6 @@
-package org.nicholasren.m8ContactConvertor
-
 import xml.{Source, XML}
 import java.util.regex.Pattern
 
-/**
- * Created by IntelliJ IDEA.
- * User: nicholasren
- * Date: 11-7-14
- * Time: 下午8:36
- */
 
 object Convertor
 {

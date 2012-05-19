@@ -1,5 +1,3 @@
-package org.nicholasren.scala
-
 /**
  * 具有协变性的list
  *

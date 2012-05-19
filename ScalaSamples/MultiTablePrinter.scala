@@ -16,7 +16,5 @@ object MultiTablePrinter {
 	    tableSeq.mkString("\n")
 	  }
 	  
-	  def main(args: Array[String]) {
-		  print(multiTable())
-	  }
 }
+print(MultiTablePrinter.multiTable)
