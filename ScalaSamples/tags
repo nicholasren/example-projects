@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Classifier6	Classifier6.java	/^    public Classifier6(int number) {$/;"	m	class:Classifier6
+Classifier6	Classifier6.java	/^public class Classifier6 {$/;"	c
+_factors	Classifier6.java	/^    private Set<Integer> _factors;$/;"	f	class:Classifier6	file:
+_number	Classifier6.java	/^    private int _number;$/;"	f	class:Classifier6	file:
+addFactor	Classifier6.java	/^    private void addFactor(int factor) {$/;"	m	class:Classifier6	file:
+calculateFactors	Classifier6.java	/^    private void calculateFactors() {$/;"	m	class:Classifier6	file:
+getFactors	Classifier6.java	/^    public Set<Integer> getFactors() {$/;"	m	class:Classifier6
+isAbundant	Classifier6.java	/^    public boolean isAbundant() {$/;"	m	class:Classifier6
+isDeficient	Classifier6.java	/^    public boolean isDeficient() {$/;"	m	class:Classifier6
+isFactor	Classifier6.java	/^    private boolean isFactor(int factor) {$/;"	m	class:Classifier6	file:
+isPerfect	Classifier6.java	/^    public boolean isPerfect() {$/;"	m	class:Classifier6
+isPerfect	Classifier6.java	/^    public static boolean isPerfect(int number) {$/;"	m	class:Classifier6
+main	Classifier6.java	/^    public static void main(String [] args)$/;"	m	class:Classifier6
+sumOfFactors	Classifier6.java	/^    private int sumOfFactors() {$/;"	m	class:Classifier6	file:

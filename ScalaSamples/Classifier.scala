@@ -1,17 +1,24 @@
 def factorsOf (n:Int) = {
-  (1 until n).toList.filter{ n % _ == 0}
+  (1 to n).toList.filter{ n % _ == 0}
 }
 
 
 def sumOfFactors(n:Int) = {
-  n == factorsOf(n).foldLeft(0) {(_:Int) + (_:Int)}
+  factorsOf(n).foldLeft(0) {(_:Int) + (_:Int)}
 }
 
 def isPerfect(n:Int):Boolean = {
-  sumOfFactors(n) == n
+  (sumOfFactors(n) - n) == n
 }
 
+def isAbundant(n:Int):Boolean = {
+  (sumOfFactors(n) - n) > n
+}
 
-println(isPerfect(6))
-println(isPerfect(7))
+def isDeficient(n:Int):Boolean = {
+  (sumOfFactors(n) - n) < n
+}
+
+println("6 is perfect number? " + isPerfect(6))
+println("7 is perfect number? " + isPerfect(7))
 
