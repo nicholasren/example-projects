@@ -1,5 +1,5 @@
-object FindFixedPoint {
-  val tolerance = 0.0001
+object SquareRootFinder {
+  val tolerance = 0.0000000001
 
   def isCloseEnough(x: Double, y: Double) = Math.abs((x - y) / x) < tolerance
 
@@ -38,5 +38,5 @@ object LazySquareRootFinder{
   }
 }
 
-println("sqrt(9)= "+ FindFixedPoint.sqrt(9))
+println("sqrt(9)= "+ SquareRootFinder.sqrt(9))
 println("lazy sqrt(9)= " + LazySquareRootFinder.sqrt(9))
