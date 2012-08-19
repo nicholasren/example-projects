@@ -8,8 +8,17 @@ class MaxHeap
     heapify 0
   end
 
-  def root
+  def peek
     @items[0] 
+  end
+
+  def take
+    smallest = @items[@items.length - 1]
+    largest = @items[0]
+
+    @items[0] = smallest
+    heapify 0
+    largest
   end
 
 
@@ -42,4 +51,3 @@ class MaxHeap
     largest
   end
 end
-
