@@ -1,0 +1,5 @@
+1. load existing data
+2. computing distance from X to each existing data
+3. find k nearest neighbour and get the result
+4. predicate value based on exsiting data
+5. support n vector data 
