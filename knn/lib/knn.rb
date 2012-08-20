@@ -2,21 +2,24 @@ class KNN
 
   def initialize k = 3
     @k = k
+    @parser = Parser.new
+    @data = {}
   end
 
-  def add_data datum
-    @data ||= [] 
-    @data << datum
+  def load_data file_path
+    @parser.from_file(file_path).each do |e|
+      @data[e.vector]= e.result
+    end
   end
 
-  def result_of x
-    return x.v if @data.include? x
-    
+  def result_for vector 
+    return @data[vector] if @data[vector]
+
     heap = MaxHeap.new
 
-    @data.each do |datum|
-      distance = distance_between(x, datum)
-      heap.insert Node.new(distance, datum.v)
+    @data.each do |k, v|
+      distance = distance_between(k, vector)
+      heap.insert Node.new(distance, v)
     end
 
     top_k = heap.take_top @k
@@ -26,8 +29,18 @@ class KNN
   private
 
   def distance_between a, b
-    (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)
+    distance = 0
+    a.each_index do |idx|
+      distance += square(a[idx] - b[idx])
+    end
+    distance
   end
+
+
+  def square x
+    x * x
+  end
+
 
   def value_with_max_vote xs
     votes = {}
@@ -65,13 +78,4 @@ class Node
     other.distance <=> self.distance
   end
 
-end
-
-class Datum
-  attr_reader :x, :y, :v
-  def initialize x = 0, y = 0, v = nil
-    @x = x
-    @y = y
-    @v = v
-  end
 end

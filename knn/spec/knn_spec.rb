@@ -1,44 +1,36 @@
 require "spec_helper"
+
 describe KNN do
+  before(:each) do
+    @knn = KNN.new
+  end
 
   it "should load test data" do
-    knn = KNN.new
-    a = Datum.new(1, 0, true)
-    knn.add_data(a)
+    set_test_data "1,0|1"
+    @knn.load_data(TEST_DATA_FILE_PATH)
 
-    knn.result_of(a).should be_true
+    @knn.result_for([1.0, 0.0]).should == 1
   end
 
   it "should return value same with nearest neighbor" do
-    knn = KNN.new 1
+    set_test_data %w{ 1,0|1  2,0|1 10,0|0 8.5,0|0 11,0|0}
+    @knn.load_data(TEST_DATA_FILE_PATH)
 
-    a = Datum.new(1,0, true)
-    b = Datum.new(2, 0, true)
-    c = Datum.new(10, 0, false)
-
-    knn.add_data(a)
-    knn.add_data(b)
-    knn.add_data(c)
-
-    d = Datum.new(9)
-    e = Datum.new(1.5)
-
-    knn.result_of(d).should be_false
-    knn.result_of(e).should be_true
+    @knn.result_for([9, 0]).should == 0
+    @knn.result_for([1.5, 0]).should == 1
   end
 
   it "should return value same with neighbor groups which has more member" do
-    knn = KNN.new
-
-    a = Datum.new(1, 0, true)
-    b = Datum.new(0, 1, true)
-    c = Datum.new(2, 1, false)
-    knn.add_data(a)
-    knn.add_data(b)
-    knn.add_data(c)
+    set_test_data %w{ 1,0|1 0,1|1 2,1|0}
+    @knn.load_data(TEST_DATA_FILE_PATH)
     
-    d = Datum.new(1, 1)
-    knn.result_of(d).should be_true
+    @knn.result_for([1, 1]).should == 1 
   end
 
+  it "should return value same with nearest neighbor" do
+    set_test_data %w{ 1,1,0|1 1,0,1|1 2,5,10|0 2,5,5|0}
+    @knn.load_data(TEST_DATA_FILE_PATH)
+    
+    @knn.result_for([1, 1, 1]).should == 1 
+  end
 end
