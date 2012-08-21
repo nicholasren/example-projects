@@ -5,7 +5,7 @@ class MaxHeap
 
   def insert x
     @items << x
-    heapify 0
+    fix_up
   end
 
   def peek
@@ -13,10 +13,8 @@ class MaxHeap
   end
 
   def take
-    largest = @items[0]
-    @items[0] = nil
-    @items.compact!
-    heapify 0
+    largest = @items.delete_at 0 
+    fix_down
     largest
   end
 
@@ -31,11 +29,21 @@ class MaxHeap
 
   private
 
-  def heapify i
+  def fix_down i = 0
     largest = find_largest i
     if largest != i
       swap largest, i
-      heapify largest
+      fix_down largest
+    end
+  end
+
+  def fix_up i = @items.length - 1
+    return if i == 0 
+    parent = (i - i % 2) / 2
+
+    if @items[i] > @items[parent]
+      swap i, parent
+      fix_up parent
     end
   end
 

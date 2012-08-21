@@ -33,22 +33,10 @@ class KNN
   end
 
   def value_with_max_vote xs
-    votes = xs.group_by{ |x| x }.map{ |element, group| [element, group.length]}
+    votes = xs.group_by{ |x| x.result }.map{ |result, group| [result, group.length]}
+
     max_voted = votes.max_by { |x| x[1] }
-    max_voted[0].result
+    max_voted[0]
   end
 end
 
-class Node
-  include Comparable
-  
-  attr_accessor :distance, :result
-  def initialize distance, result
-    @distance = distance
-    @result = result
-  end
-
-  def <=>(other)
-    other.distance <=> self.distance
-  end
-end
