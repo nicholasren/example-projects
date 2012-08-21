@@ -29,39 +29,13 @@ class KNN
   private
 
   def distance_between a, b
-    distance = 0
-    a.each_index do |idx|
-      distance += square(a[idx] - b[idx])
-    end
-    distance
+    a.zip(b).map {|x| x[0] - x[1]}.inject(0){|sum, x| sum += x*x}
   end
-
-
-  def square x
-    x * x
-  end
-
 
   def value_with_max_vote xs
-    votes = {}
-    xs.each do |x|
-      if votes[x.result].nil?
-        votes[x.result] = 1
-      else
-        votes[x.result] = votes[x.result] + 1 
-      end
-    end
-
-    max_vote = 0
-    result = nil
-    votes.each do |k, v|
-      if v > max_vote 
-        max_vote = v
-        result =k
-      end
-    end
-
-    result 
+    votes = xs.group_by{ |x| x }.map{ |element, group| [element, group.length]}
+    max_voted = votes.max_by { |x| x[1] }
+    max_voted[0].result
   end
 end
 
@@ -77,5 +51,4 @@ class Node
   def <=>(other)
     other.distance <=> self.distance
   end
-
 end
